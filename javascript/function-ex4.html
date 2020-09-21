@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input id="input1" type="text"> <br>
+    <input id="input2" type="text"> <br>
+
+
+    <button onclick="mutiply()"><i class="fas fa-time"></i></button>
+    <p id="result1"> </p>
+   
+    <input id="input3" type="text"> <br>
+    <input id="input4" type="text"> <br>
+
+
+    <button onclick="add()"><i class="fas fa-time"></i></button>
+    <p id="result2"> </p>
+
+    
+    <script>
+
+        function mutiply(num1, num2) {
+
+            var num1 = document.getElementById("input1").value;
+            var num2 = document.getElementById("input2").value;
+            var result = num1 * num2;
+            document.getElementById("result1").innerHTML = result;
+
+        }
+
+        function add(num1,num2){
+
+            var num1 = document.getElementById("input3").value;
+            var num2 = document.getElementById("input4").value;
+
+            var resultadd = parseInt(num1) + parseInt(num2);            // parseInt를 사용하여 string 을 숫자로 변환시켜준다
+            document.getElementById("result2").innerHTML = resultadd;
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

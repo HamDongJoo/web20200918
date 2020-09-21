@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    
+
+    <input id="input1" type="text"><br>
+    <input id="input2" type="text"><br>
+    <button onclick="displayAdd()"><i class="fas fa-plus"></i></button>
+    <p id="result1"></p>
+
+    <script>
+
+        function add (a,b){
+                return a+b;
+        }
+        function displayAdd(){
+
+            var n1 =document.getElementById("input1").value;
+            var n2 =document.getElementById("input2").value;
+
+            var reslut = add(parseInt(n1),parseInt(n2));
+
+            
+            document.getElementById("result1").innerHTML =reslut;
+
+         
+
+        }
+
+    </script>
+</body>
+</html>
