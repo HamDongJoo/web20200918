@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+        [target] {              
+            /* target이 적용된 a태그만*/
+            border: 5px solid black;
+
+        }
+
+        [tooltip] {
+
+            border: 5px solid blue;
+
+        }
+
+
+        [tooltip="link 1"] {
+
+            font-size: 50px;
+
+        }
+
+
+        a[title]{           /*a  태그중에 title element가 적용된 것만 */
+            color:red;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <a href="#" target="_blacnk">Lorem, ipsum dolor.</a>
+    <a href="#" target="_blacnk">Lorem, ipsum dolor.</a>
+    <a href="#" tooltip="link 1">Lorem, ipsum dolor.</a>
+    <a href="#" tooltip="link 2">Lorem, ipsum dolor.</a>
+    <a href="#" tooltip="link 3">Lorem, ipsum dolor.</a>
+    <a href="#" title="">Lorem, ipsum dolor.</a>
+
+
+</html>

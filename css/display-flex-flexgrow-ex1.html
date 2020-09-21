@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .container {
+            display: flex;
+            /* 행으로 나열*/
+            height: 500px;
+            /* justify-content: flex-start;
+            왼쪽부터 나열 */
+            /* justify-content: flex-end;
+            오른쪽부터 나열 */
+            justify-content: space-evenly;
+
+        }
+
+        #div1 {
+            background-color: blue;
+       
+            /* flex-grow: 1;
+            flex item 내에서 할당가능한 공간을 정해주는 property  */
+        }
+
+        #div2 {
+            background-color: deeppink;
+         
+            flex-grow: 1;
+        }
+
+
+        #div3 {
+            background-color: red;
+            flex-grow: 2;
+            
+        }
+
+        #div4 {
+            background-color: forestgreen;
+            flex-grow: 3;
+        }
+
+        #div5 {
+            background-color: gold;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="div1">1</div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div id="div4">4</div>
+        <div id="div5">5</div>
+    </div>
+
+
+
+</body>
+
+</html>

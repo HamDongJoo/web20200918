@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+
+                display: none;  /*화면에표시되지않게함*/
+            }
+
+            h1:hover+p{        /*마우스를 h1태그에 뒀을때 형제인 p태그가 보여지게*/
+                display: block;
+            }
+            h1:hover~p{     /*마우스를 h1태그에 뒀을때 이전 elemenet들은 다 적용*/    
+                display:block;
+            }
+
+
+        </style>
+    </head>
+
+
+    <body>
+        
+        
+        <h1>h태그
+
+
+            <p>p태그2</p>
+
+
+
+        </h1>
+       
+        <p>p태그</p>
+
+        <p>p태그2</p>
+
+
+    </body>
+</html>
