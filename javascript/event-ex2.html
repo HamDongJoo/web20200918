@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+    <input onkeyup="show()" type="text" id="input1">
+    <!-- 키를 땟을때 입력되있는 텍스트가 표시된다 -->
+    <p id ="result"></p>
+    <script>
+        function show(){
+
+            var txt = document.getElementById("input1").value;
+            document.getElementById("result").innerHTML=txt;
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    <input type="number" id="input1"><br>
+    <input type="number" id="input2">
+    <br>
+    <button onclick="showDiff()">두값의 차이</button>
+    <p id="result"></p>
+    <script>
+
+        function showDiff() {
+
+
+            var r = document.getElementById("input1").value;
+            var r2 = document.getElementById("input2").value;
+            r = Number(r);
+            r2 = Number(r2);
+            var showD = r - r2;
+            showD = Math.abs(showD);
+            document.getElementById("result").innerHTML = showD;
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

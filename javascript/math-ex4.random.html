@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="lotto()">로또</button>
+    <div id="num1"></div>
+    <div id="num2"></div>
+    <div id="num3"></div>
+    <div id="num4"></div>
+    <div id="num5"></div>
+    <div id="num6"></div>
+
+
+
+    <script>
+        function lotto() {
+
+            function getRoundNumber() {
+
+                return Math.floor(Math.random() * 45) + 1;
+
+            }
+
+
+            
+
+
+            var r1 =
+                document.getElementById("num1").innerHTML = getRoundNumber();
+
+            var r2 =
+                document.getElementById("num2").innerHTML = getRoundNumber();
+
+            var r3 =
+                document.getElementById("num3").innerHTML = getRoundNumber();
+
+            var r4 =
+                document.getElementById("num4").innerHTML = getRoundNumber();
+
+            var r5 =
+                document.getElementById("num5").innerHTML = getRoundNumber();
+
+            var r6 =
+                document.getElementById("num6").innerHTML = getRoundNumber();
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
