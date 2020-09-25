@@ -9,9 +9,9 @@
 
 
 <body>
-    <button onclick="rpsGame()"><i class="fas fa-hand-rock"></i>주먹</button>
-    <button onclick="rpsGame()"><i class="fas fa-hand-peper"></i>가위</button>
-    <button onclick="rpsGame()"><i class="fas fa-hand-scissors"></i>보</button>
+    <button onclick="rpsGame(1)" id="rock"><i class="fas fa-hand-rock"></i>주먹</button>
+    <button onclick="rpsGame(2)" id="scissors"><i class="fas fa-hand-scissors"></i>가위</button>
+    <button onclick="rpsGame(3)" id="peper"><i class="fas fa-hand-peper"></i>보</button>
 
 
 
@@ -23,23 +23,63 @@
 
     <script>
 
-        function rpsGame() {
+        function rpsGame(user) {
 
             var r = Math.floor(Math.random() * 3) + 1;
             var fileName = "rps" + r + ".png";
             document.getElementById("computer").src = fileName;
+
+      //r-1 가위  r-2 보 
+
+            if (user == 1 && r == 1) {
+                document.getElementById("result").innerHTML = "이겼습니다.";
+               
+            } else if (user == 1 && r == 3) {
+                document.getElementById("result").innerHTML = "비겼습니다.";
+            }
+              else if (user ==1 && r==2 ){
+                 document.getElementById("result").innerHTML = "졌습니다.";
+
+            }
+        
+
+
+
+              else if (user == 2 && r == 1) {
+                document.getElementById("result").innerHTML = "비겼습니다.";
+
+            } else if (user == 2 && r == 3) {
+                document.getElementById("result").innerHTML = "졌습니다.";
+            }
+              else if (user ==2 && r==2){
+                document.getElementById("result").innerHTML = "이겼습니다.";
+            }
+        
+
+
+
+
+              else if (user == 3 && r == 1) {
+                document.getElementById("result").innerHTML = "졌습니다.";
+            } else if (user == 3 && r == 3) {
+                document.getElementById("result").innerHTML = "이겼습니다.";
+            }
+            else {
+                document.getElementById("result").innerHTML = "비겼습니다.";
+            }
 
 
         }
 
 
 
-        document.getElementById("result").innerHTML = "이겼습니다.";
 
 
-        document.getElementById("result").innerHTML = "졌습니다..";
 
-        document.getElementById("result").innerHTML = "비겼습니다..";
+
+
+
+
 
     </script>
 </body>

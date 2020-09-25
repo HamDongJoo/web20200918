@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+
+
+    <h1 id="head1">Lorem.</h1>
+    <h1 class="note" id="head2">A?</h1>
+    <h1 class="note error" id="head3">Ipsum.</h1>
+    <h1 id="head4">Corrupti.</h1>
+    <h1 id="head5">Ex.</h1>
+
+
+
+    <script>
+      
+        var h1 = document.querySelector("#head1");   //하나의 셀렉터만 선택가능 , 여러가지선택하고싶다면 querySelectororAll() 메서드 사용
+        console.log(h1.innerHTML);            
+
+
+        var h2 =document.querySelector(".note");
+        console.log(h2.innerHTML);
+    </script>
+
+</body>
+
+</html>

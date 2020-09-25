@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+
+
+    <h1 class="note" id="head1">Lorem.</h1>
+    <h1 class="note" id="head2">A?</h1>
+    <h1 class="note error" id="head3">Ipsum.</h1>
+    <h1 id="head4">Corrupti.</h1>
+    <h1 id="head5">Ex.</h1>
+
+
+
+    <script>
+        var heads = document.querySelectorAll("h1");        //모든 h1 셀렉터를 선택
+
+        console.log(heads.length);
+
+        var notes = document.querySelectorAll(".note");     // 클래스이름이 note 인 셀렉터
+        
+        console.log(notes.length);
+
+        var ne = document.querySelectorAll(".note.error");  //클래스가 note 이면서 error 인 셀렉터 
+
+        console.log(ne.length);
+
+
+        for (var i=0; i < ne.length; i++){
+            ne[i].innerHTML = "hell";
+
+
+            
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

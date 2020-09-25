@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <ol>
+
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+    </ol>
+
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list items</button>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                $("p").append("<b>Appended text</b>");          //선택한 element 의 끝에 콘텐츠를 추가
+            });
+
+            $("#btn2").click(function () {
+                $("ol").prepend("<li>Appended item<li>");       //선택한 element 의 시작에 콘텐츠를 추가 
+
+
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

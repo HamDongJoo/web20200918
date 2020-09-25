@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+
+</head>
+
+
+<body>
+
+
+    <script>
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                txt += "*";
+
+            }
+            console.log(txt);
+
+        }         // console.log(i, j); 1번문제
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i >= j) {
+
+
+                    txt += "*";
+                }
+
+            }
+            console.log(txt);
+        }           //2번문제
+
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i <= j) {
+
+
+                    txt += "*";
+                }
+
+            }
+
+            console.log(txt);
+
+        }   //3번문제
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i < j) {
+
+                    txt += "#";
+
+                } else {
+
+                    txt += "*";
+                }
+
+            }
+            console.log(txt);
+        }   //4번문제
+
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i > j) {
+
+                    txt += "#";
+
+                } else {
+
+                    txt += "*";
+                }
+
+            }
+            console.log(txt);
+        }    //5번문제
+
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i <= j) {
+
+                    txt += "*";
+
+                } else {
+
+                    txt += " ";
+                }
+
+            }
+            console.log(txt);
+        }   //6번문제
+
+
+
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+                if (i+j>=4) {
+
+                    txt += "*";
+
+                } else {
+
+                    txt += " ";
+                }
+
+            }
+            console.log(txt);
+        }   //7번문제
+
+        
+        for (var i = 0; i <= 4; i++) {
+
+            var txt = "";
+            for (var j = 0; j <= 4; j++) {
+
+               txt +=(j);
+                }
+
+            
+            console.log(txt);
+            }   //8번문제
+
+
+
+            for (var i = 0; i <= 4; i++) {
+
+                var txt = "";
+                for (var j = i; j <= 4+i; j++) {
+                   
+                    
+
+                    txt += j;
+                    
+                }
+
+
+                console.log(txt);
+            }   //9번문제
+
+
+
+            for (var i = 0; i <= 4; i++) {
+
+                var txt = "";
+                for (var j = 0; j <= i; j++) {
+                
+                    
+
+                    txt += j;
+                    
+                }
+
+
+                console.log(txt);
+
+            }      //10번문제
+
+                var k = 0;
+                for (var i = 0; i <= 4; i++) {
+                var txt = "";
+                for (var j = 0; j <= i; j++) {
+
+                    
+
+                    txt += k%10;
+                    k++;
+                    
+                }
+
+
+                console.log(txt);
+
+                }      //11번문제
+
+
+    </script>
+</body>
+
+</html>

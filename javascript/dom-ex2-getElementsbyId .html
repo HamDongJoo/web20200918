@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p id="para1">Lorem ipsum dolor sit amet.</p>
+    <p id="para2">Dolore aliquid excepturi dolorum dolorem!</p>
+    <p id="para3">Accusamus ullam reprehenderit laborum officiis.</p>
+    <p id="para4">Tempora pariatur consectetur ullam maiores.</p>
+    <p id="para5">Tenetur quae nesciunt delectus recusandae.</p>
+
+    <script>
+        var x = document.getElementById("para1");
+
+        console.log(x);
+
+        x.innerHTML = "helloworld";
+
+
+        var pt = document.getElementsByTagName("p");
+
+
+        console.log(pt.length);
+
+        for (i = 0; i < pt.length; i++) {
+
+            console.log(pt[i].innerHTML);
+        }
+
+    </script>
+</body>
+
+</html>

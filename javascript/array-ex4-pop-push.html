@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <p id ="demo"></p>
+    <script>
+        var heros = ["thor", "hulk", "cap", "doctor"];
+
+        for (var i = 0; i < heros.length; i++) {
+            console.log(heros[i]);
+
+
+        }
+        var a = heros.indexOf("hulk");  //배열에서 지정된 항목의 주소를 찾는 method()
+        console.log(a);
+        
+        document.getElementById("demo").innerHTML = heros.valueOf(); // valueOf () 메서드는 배열을 반환합니다.
+        heros.push("marvel");       //배열에 값을 넣는 method push()
+        console.log(heros[i]);
+
+
+        heros.pop();                //배열에 마지막 값을 빼는 method pop()
+        console.log(heros.length);
+        for (var i = 0; i < heros.length; i++) {
+            console.log(heros[i]);
+        }
+
+
+    </script>
+</body>
+
+</html>

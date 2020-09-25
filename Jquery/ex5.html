@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      
+    </style>
+</head>
+
+<body>
+
+    <p>Name:<input type="text" id="test" value="mickey mouse"></p>
+        
+    <button >show value</button>
+    <script>
+
+
+        $(document).ready(function(){
+
+            $("button").click(function(){
+                alert("value:" + $("#test").val());                 // .val() 벨류 값을 변경시킬수있다.
+            });     
+        });
+
+
+
+    </script>
+</body>
+
+</html>

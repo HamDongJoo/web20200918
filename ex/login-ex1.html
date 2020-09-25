@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<title>Member Manager</title>
+ 
+<head>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            text-decoration: none;
+        }
+        #container {
+            background-color: aliceblue;
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: auto;
+            border-radius: 20px;
+        }
+        #header {
+            margin: 0px 0px 20px 0px;
+            padding: 50px 0px 20px 20px;
+            border-bottom: 1px solid #dadada;
+            display: block;
+        }
+        #wrap1_2 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px solid #dadada;
+        }
+        .dbox {
+            word-wrap: break-word;
+            word-break: keep-all;
+        }
+        #box1 {
+            position: relative;
+            float: left;
+            width: 850px;
+            display: inline-block;
+            padding: 20px;
+        }
+        #box2 {
+            position: relative;
+            float: right;
+            width: 270px;
+            padding: 20px;
+            text-align: center;
+            display: inline-block;
+        }
+        #joinform {}
+        .jo_text {
+            height: 20px;
+        }
+        .jobtn {
+            padding: 10px 30px;
+            font-size: 14px;
+            color: white;
+            background-color: cadetblue;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+        #box3 {
+            position: relative;
+            width: 1160px;
+            display: inline-block;
+            padding: 20px;
+        }
+        .tbl_member {
+            width: 100%;
+            margin: auto;
+            border-collapse: collapse;
+            text-align: center;
+            background-color: #fff;
+        }
+        .tbl_member td {
+            padding: 10px 30px;
+            border: 1px solid #dadada;
+            height: 15px;
+            width: 15px;
+        }
+        .mabtn {
+            font-size: 14px;
+            color: #fff;
+            padding: 5px;
+            background-color: cadetblue;
+            border-radius: 5px;
+            margin: 0px 5px;
+        }
+        .popup {
+            position: absolute;
+            right: 20px;
+            top: 0px;
+            z-index: 99999;
+            height: 400px;
+            width: 500px;
+            background-color: #fff;
+            border: 1px solid #dadada;
+            border-radius: 5px;
+            visibility: hidden;
+        }
+        .popup #clbtn {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            border: 1px solid #dadada;
+            color: black;
+            padding: 0 5px;
+        }
+        .popup .jo_text {
+            position: relative;
+            width: 300px;
+            height: 30px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        #popfixbtn {
+            margin: 0 auto;
+        }
+        #fixtbl {
+            margin: 20px auto;
+        }
+        #fixtbl td {
+            padding-bottom: 10px;
+        }
+ 
+    </style>
+    <script>
+        var memArr=[]; //맴버배열 전역변수로 선언. 반드시 배열타입이어야한다. 
+        window.onload = function() { //페이지로딩완료시 한번만 실행
+            var temArr = JSON.parse(localStorage.getItem('member')); //스토리지에서 member키값의 배열을 json으로 받아 임시배열에 담는다.
+            if (temArr != null) { //임시배열에 저장된 member키값이 null이 아닐때
+                memArr = temArr; //스토리지에서 member키값의 배열을 json으로 받아 memArr전역변수에 담는다.
+                for (i = 0; i < memArr.length; i++) {
+                    document.getElementById('tmem').innerHTML +=
+                        "<tr>" +
+                        "<td>" + i + "</td>" +
+                        "<td>" + memArr[i].id + "</td>" +
+                        "<td>" + memArr[i].password + "</td>" +
+                        "<td>" + memArr[i].name + "</td>" +
+                        "<td>" + "<a href='#' role='button' id='fixbtn' class='mabtn' onclick='openfix(" + i + ")'>수정</a>" +
+                        "<a href='#' role='button' id='delbtn' class='mabtn' onclick='jodel(" + i + ")'>삭제</a>" +
+                        "</td>" +
+                        "</tr>"
+                }
+            }
+        }
+ 
+        function josub() {
+            var fo = document.getElementById('joinform'); //메인화면 가입폼받아옴
+            memArr.push(json(fo)); //fo의 요소들로 객체 생성하여 memArr에 추가. memArr의 타입이 배열이 아니면 오류가 난다.
+            localStorage.member = JSON.stringify(memArr);
+            fo.submit();
+        }
+ 
+        function jodel(i) { //버튼의 index값을 매개변수로 받아 실행
+            memArr.splice(i, 1);        
+            localStorage.member = JSON.stringify(memArr);
+            location.reload();
+        }
+ 
+        function openfix(i) { //버튼의 index값을 매개변수로 받아 실행
+            document.getElementById("fipop").style.visibility = "visible";
+            document.getElementById("popfixbtn").onclick = function() {
+                var fixfo = document.getElementById('fixform'); //팝업의 수정폼받아옴
+                memArr[i] = json(fixfo); //fixfo의 폼 요소들로 객체생성하여 memArr수정
+                localStorage.member = JSON.stringify(memArr);
+                location.reload();
+            };
+        }
+ 
+        function closefix() {
+            document.getElementById("fipop").style.visibility = "hidden";
+        }
+ 
+        function json(f) { //json으로쓸 객체생성 form을 매개변수로받음
+            var son = {
+                id: f.querySelectorAll('.jo_text')[0].value,
+                password: f.querySelectorAll('.jo_text')[1].value,
+                name: f.querySelectorAll('.jo_text')[2].value
+            };
+            return son;
+        }
+ 
+    </script>
+</head>
+ 
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Member Manager</h1>
+        </div>
+        <div id="wrap1_2">
+            <div id="box1" class="dbox">
+                <div style="margin-bottom: 20px;">
+                    <h2>회원등록</h2>
+                </div>
+                <div class="" id="">
+                    <form id="joinform" action="/project7.html" method="get">
+                        <table>
+                            <tr>
+                                <td><span>아이디</span></td>
+                                <td><span>비밀번호</span></td>
+                                <td><span>이름</span></td>
+                                <td rowspan="2"><a href="#" role="button" onclick="josub()" class="jobtn">등록</a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="id" class="jo_text"></td>
+                                <td><input type="text" id="password" class="jo_text"></td>
+                                <td><input type="text" id="name" class="jo_text"></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div id="box2" class="dbox">
+                <div id="fipop" class="popup dbox">
+                    <form id="fixform">
+                        <table id="fixtbl">
+                            <tr><td><h2>회원정보 수정</h2></td></tr>
+                            <tr><td>아이디(이메일)</td></tr>
+                            <tr><td><input type="text" id="idfix" class="jo_text"></td></tr>
+                            <tr><td>비밀번호</td></tr>
+                            <tr><td><input type="text" id="passwordfix" class="jo_text"></td></tr>
+                            <tr><td>이름</td></tr>
+                            <tr><td><input type="text" id="namefix" class="jo_text"></td></tr>
+                            <tr><td><a href="#" id="popfixbtn" role="button" onclick="" class="jobtn">수정</a></td></tr>
+                        </table>
+                    </form>
+                    <a id="clbtn" href="#" role="button" onclick="closefix()">X</a>
+                </div>
+            </div>
+        </div>
+        <div id="box3" class="dbox">
+            <h3 style="margin-bottom: 10px;">회원리스트</h3>
+            <table class="tbl_member" id="tmem">
+                <tr>
+                    <td>index</td>
+                    <td>아이디(이메일)</td>
+                    <td>비밀번호</td>
+                    <td>이름</td>
+                    <td>관리</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+ 
+</html>

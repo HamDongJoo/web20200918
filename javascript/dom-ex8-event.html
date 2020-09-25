@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1  onclick="console.log('3')" id="head1">Lorem, ipsum dolor.</h1>
+    <h1 onclick="show();" id="head2">Officia, dolorem veniam!</h1>
+    <h1 id="head3">Modi, esse quo.</h1>
+    <h1 id="head4">Modi,</h1>
+        
+
+    <script>
+
+
+        
+        
+        var h3= document.getElementById("head3");
+        
+        h3.onclick =show;                       //show()라는 메서드가 onclick 이라는 attribute에 넣는다  javascript만 가능 
+        
+        
+        function show(){
+            
+            for(var i=0; i< 3; i++);
+            console.log(i);
+        }
+        
+        var h4 = document.getElementById("head4");
+
+        h4.addEventListener("click",show);                    // 이벤트를 추가한다  click라는 이벤트 , show() 메서드 
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <p id="test">Lorem, ipsum dolor..</p>
+
+    <button id="btn1">show text</button>
+    <button id="btn2">show html</button>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text:" + $("#test").text());             // btn1 의 text 를 바꿀수있다 
+
+            });
+            $("#btn2").click(function () {
+                alert("HTML" + $("#test").html());              // btn2의  html을 바꿀수 있다
+        
+            });
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

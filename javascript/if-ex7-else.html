@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="rpsGame(3)"><i class="fas fa-hand-rock">주먹</i></button>
+    <button onclick="rpsGame(2)"><i class="fas fa-hand-paper">보</i></button>
+    <button onclick="rpsGame(1)"><i class="fas fa-hand-scissors">가위</i></button>
+    <br>
+
+    <img src="" alt="" id="com">
+
+
+    <p id="userv"></p>
+
+    <script>
+        function rpsGame(user) {
+            // 파라미터 값으로 user의 값을 받아온다
+            var computer = Math.floor(Math.random() * 3) + 1;
+            // 난수를 3가지 만들어 변수 computer에 저장
+            var fileName = "rps" + computer + ".png";
+            // rps1: 가위 rps2: 보 rps3:바위 
+            document.getElementById("com").src = fileName;
+
+            var result;
+            
+
+            if (computer == user) {
+                result = "비겼습니다";
+
+            } else if (computer == 1 && user == 3) {
+
+                result = "이겼습니다.";
+            } else if (computer == 2 && user == 1) {
+                result = "이겼습니다.";
+            } else if (computer ==3 && user ==2)   {
+                result = "이겼습니다";
+            } else{
+                result ="졌습니다.";
+            }
+            document.getElementById("userv").innerHTML =result;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
